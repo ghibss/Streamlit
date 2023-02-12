@@ -8,10 +8,10 @@ from streamlit_multipage import MultiPage
 import order_table
 import os
 
-def Open(st, **state):
+def Open():
     st.title("Weelcome Maestro")
     st.write("Hai un APP Table Manager per le prenotazioni ed una per stampare il pdf")
-def TableManager(st, **state):
+def TableManager():
     st.title("Table Manager App")
     with st.form("TableBook"):
         st.write("TableBook")
@@ -68,7 +68,7 @@ def TableManager(st, **state):
 
 
 
-def PrintPdf(st, **state):
+def PrintPdf():
     st.title("Print Pdf App")
     st.write("Cose da Fare")
     with st.form("my_form"):
@@ -81,15 +81,16 @@ def PrintPdf(st, **state):
             df_tables = pd.read_csv("data/"+f"{d}.csv").dropna()
             st.write(df_tables)
 
-app = MultiPage()
-app.st = st
-tables = pd.read_csv("tables.csv",';')
-tables = tables.dropna(axis=1)
-#st.write(tables)
-app.add_app("Open", Open)
-app.add_app("OrderBook", TableManager)
-app.add_app("PrintPdf", PrintPdf)
+page_names_to_funcs = {
+    "Home": Open,
+    "TableManager": TableManager,
+    "PrintPdf": PrintPdf
+}
+
+demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())
+page_names_to_funcs[demo_name]()
 
 
-app.run()
+
+#app.run()
 
