@@ -7,7 +7,7 @@ from PIL import Image
 import os
 
 def Open():
-    st.title("Weelcome Maestro")
+    st.title("Welcome Maestro")
     st.write("Hai un APP Table Manager per le prenotazioni ed una per stampare il pdf")
 def TableManager():
     st.title("Table Manager App")
