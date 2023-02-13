@@ -48,7 +48,7 @@ def TableManager():
         df_tables.index = df_tables['Table Id']
         table_free = df_tables[df_tables.State !='Free']
         table_id = st.multiselect('Select Table',table_free.index)
-        submitted_D = st.form_submit_button("Book")
+        submitted_D = st.form_submit_button("Book Delete")
 
     if submitted_D:
         st.write("Here We GO")
