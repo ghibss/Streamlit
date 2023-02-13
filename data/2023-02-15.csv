@@ -1,7 +1,7 @@
 Table Id,N Posti,State,N_persone
 Tavolo 0,8,Free,0
 Tavolo 1 Est,6,Free,0
-Tavolo 2 Est,6,Free,0
+Tavolo 2 Est,6,F,0
 Tavolo 3 Est,6,Free,0
 Tavolo 4 Est,3,Free,0
 Tavolo 5 Est,8,Free,0
